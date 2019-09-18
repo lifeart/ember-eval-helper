@@ -1,13 +1,16 @@
 {
   "name": "ember-eval-helper",
-  "version": "0.0.0",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "0.0.1",
+  "description": "Ember eval helper",
   "keywords": [
-    "ember-addon"
+    "ember-addon",
+    "ember-js",
+    "handlebars",
+    "eval"
   ],
-  "repository": "",
+  "repository": "https://github.com/lifeart/ember-eval-helper.git",
   "license": "MIT",
-  "author": "",
+  "author": "Aleksandr Kanunnikov <lifeart92@gmail.com>",
   "directories": {
     "doc": "doc",
     "test": "tests"
@@ -21,6 +24,7 @@
     "test:all": "ember try:each"
   },
   "dependencies": {
+    "calculate-cache-key-for-tree": "^2.0.0",
     "ember-cli-babel": "^7.7.3"
   },
   "devDependencies": {

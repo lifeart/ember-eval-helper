@@ -1,3 +1,8 @@
-<h2 id="title">Welcome to Ember</h2>
-
+{{#let (e "{ projectName: 'Ember' }") as |project|}}
+  <h2 id="title">{{project.projectName}}</h2>
+{{/let}}
+<MyComponent 
+    @params="`{name:[1,2,3, Object.keys(this)]}`"
+/>
 {{outlet}}
+
