@@ -1,7 +1,7 @@
 ember-eval-helper
 ==============================================================================
 
-This addon introduce `e` (eval) helper, to allow this syntax usage in templates
+This addon introduce `e` (eval) helper, to allow this syntax usage in templates:
 
 ```hbs
 <button {{action (e "alert") "Hello" target=(e "window") }}>
@@ -13,6 +13,11 @@ This addon introduce `e` (eval) helper, to allow this syntax usage in templates
 {{#let (e "{ projectName: 'Ember' }") as |project|}}
   <h2 id="title">{{project.projectName}}</h2>
 {{/let}}
+
+
+{{#each (e "[1,2,3,4]") as |item|}}
+    Number: {{item}}
+{{/each}}
 ```
 
 `this` scope access also supported, passing it as second argument
@@ -57,7 +62,14 @@ ember install ember-eval-helper
 Usage
 ------------------------------------------------------------------------------
 
-[Longer description of how to use the addon in apps.]
+
+```
+helper e(evalString = '', context = null)
+```
+
+```hbs
+  <Component @attr="`someTextToEval`" />
+```
 
 
 Contributing
