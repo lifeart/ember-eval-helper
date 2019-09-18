@@ -29,7 +29,7 @@ export {
 ```
 
 ```hbs
-{{e 'this.foo' this}}
+{{e 'this.name' this}}
 ```
 
 Manual scope creation:
