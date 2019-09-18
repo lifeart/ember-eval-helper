@@ -32,7 +32,7 @@ export {
 {{e 'this.name' this}}
 ```
 
-Manual scope creation:
+Manual `this` context creation:
 
 ```hbs
 <MyComponent
