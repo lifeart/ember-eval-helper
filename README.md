@@ -32,6 +32,22 @@ export {
 {{e 'this.foo' this}}
 ```
 
+Manual scope creation:
+
+```hbs
+<MyComponent
+  @params={{
+    e "this.onClick(this.foo, this.bar)" 
+      (hash
+        onClick=(e "this.onClick.bind(this)" this)
+        foo=@foo
+        bar=(array 1 2 3)
+      )
+  }}
+/>
+
+```
+
 Sugar: Angle components tagged  values will be autocompiled.
 
 ```hbs
