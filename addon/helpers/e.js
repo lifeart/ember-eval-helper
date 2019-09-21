@@ -1,13 +1,12 @@
 import { helper } from '@ember/component/helper';
-
+const func = function(str) {
+  return new Function( 'return (' + str + ')' );
+}
 export function e([rawStr, context = null ] = ['', null]/*, hash*/) {
   const str = rawStr.trim();
-  function ctx(text) {
-    const hasLiterals = text.startsWith('`') && text.endsWith('`');
-    const firstResult = eval('[' + text + ']')[0];
-    return hasLiterals ? eval('[' + firstResult + ']')[0] : firstResult;
-  }
-  return ctx.call(context, str);
+  const hasLiterals = str.startsWith('`') && str.endsWith('`');
+  const result = func(str).call(context);
+  return hasLiterals ?  func(result).call(context) : result;
 }
 
 export default helper(e);

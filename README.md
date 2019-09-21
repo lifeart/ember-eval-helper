@@ -3,6 +3,8 @@ ember-eval-helper
 
 This addon introduce `e` (eval) helper, to allow this syntax usage in templates:
 
+* this addont don't use `eval`.
+
 ```hbs
 <button {{action (e "alert") "Hello" target=(e "window") }}>
   onclick = window.alert("hello")
